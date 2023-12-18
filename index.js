@@ -14,8 +14,8 @@ const puppeteer = require('puppeteer-core');
 
   await page.goto('https://safemap.go.kr/main/smap.do?flag=2#'); // 해당 URL로 이동
 
-  const englishButton = await page.waitForSelector('.ico_popup_close_bk')
-  await englishButton.click()
+  const closeButton = await page.waitForSelector('.ico_popup_close_bk')
+  await closeButton.click()
 
   const searchOption = await page.waitForSelector('#srchType')
   await page.select('select#srchType', 'srch_place')
@@ -36,9 +36,8 @@ const puppeteer = require('puppeteer-core');
   const Insur_fake = await page.waitForSelector('#Insur_fake')
   await Insur_fake.click()
 
-  const englishButton2 = await page.waitForSelector('.btn_close')
-  await englishButton2.click()
-
+  const closeButton2 = await page.waitForSelector('.btn_close')
+  await closeButton2.click()
 
   const btnpagelast = await page.waitForSelector('.btn-page-last')
   await btnpagelast.click()
@@ -50,12 +49,31 @@ const puppeteer = require('puppeteer-core');
   const btnpagefirst = await page.waitForSelector('.btn-page-first')
   await btnpagefirst.click()
   
-  //여기부터 logic 
-  for(var i=1;i<=Lastpage;i++){
+  //여기부터 logic
+  let data=[];
+  for(let i=1;i<=Lastpage;i++){
+    //const ico = .ico
+    //비교 pin024.png
+    //this -> parrent > tit, parrent > address
+    //{"ico":"","title":"","address",""}
+//    <li>
+//      <a href="javascript:moveLayerPoint('14151336.018244362','4505412.010584575');" class="item">
+//      <span class="ico cate03" style="background:url(/images/legend/pin024.png);
+//      background-repeat: no-repeat;background-size:contain;background-position: center;"></span>
+//      <p class="tit">(주)엘엑스판토스</p>
+//      <p class="address">서울특별시 송파구 송파대로 55, C동 5층 (장지동,서울복합물류)</p>
+//    </a>
+//    </li>
 
+
+    const btnpagenext = await page.waitForSelector('.btn-page-next')
+    await btnpagenext.click()
     i++;
   }
-  
+  //파일에 추가저장
+  const fs = require('fs');
+  fs.writeFileSync('file.json', JSON.stringify(data));
+
 {/* <div class="row tagTab-cont" id="tagTab-cont05" style="display: block;">
     <p class="majorCont-subTit">재난배상책임보험</p>
     <button type="button" class="tagTab-cont-close">닫기</button>

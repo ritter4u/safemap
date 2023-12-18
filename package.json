@@ -1,5 +1,6 @@
 {
 	"dependencies": {
+		"fs": "0.0.1-security",
 		"puppeteer": "^21.6.1",
 		"puppeteer-core": "^21.6.1"
 	}
