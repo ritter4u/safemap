@@ -50,7 +50,8 @@ const fs = require('fs');
 
     //데이터 준비 끝
 
-    //재난으로
+    //재난으로 - 자주 부르는 것같은데 모듈화?
+
     const hazard = await page.waitForSelector('li[title="재난"] > a')
     await hazard.click()
 
