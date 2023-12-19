@@ -17,17 +17,24 @@ const fs = require('fs');
 
   await page.goto('https://safemap.go.kr/main/smap.do?flag=2#'); // 해당 URL로 이동
 
-  const closeButton = await page.waitForSelector('.ico_popup_close_bk')
+  let closeButton = await page.waitForSelector('.ico_popup_close_bk')
   await closeButton.click()
 
-  const searchOption = await page.waitForSelector('#srchType')
-  await page.select('select#srchType', 'srch_place')
-  
-  //arg로 구를 받던지 여튼 가변으로
-  const searchield = await page.waitForSelector('#srchWeb')
-  await searchield.type('강남구')
-  const searchbutton = await page.waitForSelector('#btn_srch')
-  await searchbutton.click()
+  //행정구역 가져오는 로직
+  const crime = await page.waitForSelector('li[title="범죄"] > a')
+  await crime.click()
+  const crime_all = await page.waitForSelector('.web-menu > a.tagTab-cont06')
+  await crime_all.click()
+
+  //우측패널확인
+  //닫혔으면 열자
+  //시도 가져오기
+  //각시도마다 시군구 가져오기
+  //각 시도마다 아래 시군구 붙이기
+
+  //데이터 준비 끝
+
+  //재난으로
   const hazard = await page.waitForSelector('li[title="재난"] > a')
   await hazard.click()
 
@@ -42,6 +49,17 @@ const fs = require('fs');
   const closeButton2 = await page.waitForSelector('.btn_close')
   await closeButton2.click()
 
+  //검색으로
+  const searchOption = await page.waitForSelector('#srchType')
+  await page.select('select#srchType', 'srch_place')
+
+  //arg로 구를 받던지 여튼 가변으로
+  const searchield = await page.waitForSelector('#srchWeb')
+  await searchield.type('강남구')
+  const searchbutton = await page.waitForSelector('#btn_srch')
+  await searchbutton.click()
+
+  //페이지 데이터 가져오기
   const btnpagelast = await page.waitForSelector('.btn-page-last')
   await btnpagelast.click()
 
@@ -58,8 +76,10 @@ const fs = require('fs');
   const checkico = await page.waitForSelector('.ico')
   let ico = await page.$$('.ico')
 
-  
- 
+  const isNotHidden = await page.$$eval('.ico', (elem) => {
+    return window.getComputedStyle(elem).getPropertyValue('backgroundImage')
+});
+// await console.log(isNotHidden)
   // const backgroundImage = await page.evaluate(el => window.getComputedStyle(el).backgroundImage, await page.$('.ico'))
 
   // await ico.map(el=>console.log(el.getProperties())) 

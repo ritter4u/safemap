@@ -1,0 +1,42 @@
+<div class="row list-box">
+    <div class="sc_location_table">
+        <ul class="col city">
+            <li><p class="heading">시/도</p>
+                <div class="scroller">
+                    <ul id="locationCity" class="flat_table_list" style="position:relative;">
+                        <li><a href="#" onclick="javascript:locationMoveCity(11)" id="City0" class="on"> 서울특별시</a></li>
+                        <li><a href="#" onclick="javascript:locationMoveCity(26)" id="City1"> 부산광역시</a></li>
+                        <li><a href="#" onclick="javascript:locationMoveCity(27)" id="City2"> 대구광역시</a></li>
+                        <li><a href="#" onclick="javascript:locationMoveCity(28)" id="City3"> 인천광역시</a></li>
+                        <li><a href="#" onclick="javascript:locationMoveCity(29)" id="City4"> 광주광역시</a></li>
+                        <li><a href="#" onclick="javascript:locationMoveCity(30)" id="City5"> 대전광역시</a></li>
+                        <li><a href="#" onclick="javascript:locationMoveCity(31)" id="City6"> 울산광역시</a></li>
+                        <li><a href="#" onclick="javascript:locationMoveCity(36)" id="City7"> 세종특별자치시</a></li>
+                        <li><a href="#" onclick="javascript:locationMoveCity(41)" id="City8"> 경기도</a></li>
+                        <li><a href="#" onclick="javascript:locationMoveCity(42)" id="City9"> 강원도</a></li>
+                        <li><a href="#" onclick="javascript:locationMoveCity(43)" id="City10"> 충청북도</a></li>
+                        <li><a href="#" onclick="javascript:locationMoveCity(44)" id="City11"> 충청남도</a></li>
+                        <li><a href="#" onclick="javascript:locationMoveCity(45)" id="City12"> 전라북도</a></li>
+                        <li><a href="#" onclick="javascript:locationMoveCity(46)" id="City13"> 전라남도</a></li>
+                        <li><a href="#" onclick="javascript:locationMoveCity(47)" id="City14"> 경상북도</a></li>
+                        <li><a href="#" onclick="javascript:locationMoveCity(48)" id="City15"> 경상남도</a></li>
+                        <li><a href="#" onclick="javascript:locationMoveCity(50)" id="City16"> 제주특별자치도</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        <ul class="col">
+            <li>
+                <p class="heading">시/군/구</p>
+                <div class="scroller">
+                    <ul id="locationBorough" class="flat_table_list" style="position:relative;">
+                        <li><a href="#" onclick="javascript:locationMoveSigCd(11680)" id="Borough0"> 강남구</a></li>
+                        <li><a href="#" onclick="javascript:locationMoveSigCd(11740)" id="Borough1"> 강동구</a></li>
+                        <li><a href="#" onclick="javascript:locationMoveSigCd(11305)" id="Borough2"> 강북구</a></li>
+                        <li><a href="#" onclick="javascript:locationMoveSigCd(11500)" id="Borough3"> 강서구</a></li>
+                        <li><a href="#" onclick="javascript:locationMoveSigCd(11620)" id="Borough4"> 관악구</a></li>
+                        <li><a href="#" onclick="javascript:locationMoveSigCd(11215)" id="Borough5"> 광진구</a></li>
+                        <li><a href="#" onclick="javascript:locationMoveSigCd(11530)" id="Borough6"> 구로구</a></li>
+                        <li><a href="#" onclick="javascript:locationMoveSigCd(11545)" id="Borough7"> 금천구</a></li>
+                        <li><a href="#" onclick="javascript:locationMoveSigCd(11350)" id="Borough8"> 노원구</a></li>
+                        <li><a href="#" onclick="javascript:locationMoveSigCd(11320)" id="Borough9"> 도봉구</a></li><li><a href="#" onclick="javascript:locationMoveSigCd(11230)" id="Borough10"> 동대문구</a></li><li><a href="#" onclick="javascript:locationMoveSigCd(11590)" id="Borough11"> 동작구</a></li><li><a href="#" onclick="javascript:locationMoveSigCd(11440)" id="Borough12"> 마포구</a></li><li><a href="#" onclick="javascript:locationMoveSigCd(11410)" id="Borough13"> 서대문구</a></li><li><a href="#" onclick="javascript:locationMoveSigCd(11650)" id="Borough14"> 서초구</a></li><li><a href="#" onclick="javascript:locationMoveSigCd(11200)" id="Borough15"> 성동구</a></li><li><a href="#" onclick="javascript:locationMoveSigCd(11290)" id="Borough16"> 성북구</a></li><li><a href="#" onclick="javascript:locationMoveSigCd(11710)" id="Borough17"> 송파구</a></li><li><a href="#" onclick="javascript:locationMoveSigCd(11470)" id="Borough18"> 양천구</a></li><li><a href="#" onclick="javascript:locationMoveSigCd(11560)" id="Borough19" class="on"> 영등포구</a></li><li><a href="#" onclick="javascript:locationMoveSigCd(11170)" id="Borough20"> 용산구</a></li><li><a href="#" onclick="javascript:locationMoveSigCd(11380)" id="Borough21"> 은평구</a></li><li><a href="#" onclick="javascript:locationMoveSigCd(11110)" id="Borough22"> 종로구</a></li><li><a href="#" onclick="javascript:locationMoveSigCd(11140)" id="Borough23"> 중구</a></li><li><a href="#" onclick="javascript:locationMoveSigCd(11260)" id="Borough24"> 중랑구</a></li></ul></div></li></ul><ul class="col"><li><p class="heading">읍/면/동</p><div class="scroller"><ul id="locationDong" class="flat_table_list" style="position:relative;"><li><a href="#" onclick="javascript:locationDong('Dong0',11560117)" id="Dong0"> 당산동</a></li><li><a href="#" onclick="javascript:locationDong('Dong1',11560111)" id="Dong1"> 당산동1가</a></li><li><a href="#" onclick="javascript:locationDong('Dong2',11560112)" id="Dong2"> 당산동2가</a></li><li><a href="#" onclick="javascript:locationDong('Dong3',11560113)" id="Dong3"> 당산동3가</a></li><li><a href="#" onclick="javascript:locationDong('Dong4',11560114)" id="Dong4"> 당산동4가</a></li><li><a href="#" onclick="javascript:locationDong('Dong5',11560115)" id="Dong5"> 당산동5가</a></li><li><a href="#" onclick="javascript:locationDong('Dong6',11560116)" id="Dong6"> 당산동6가</a></li><li><a href="#" onclick="javascript:locationDong('Dong7',11560133)" id="Dong7"> 대림동</a></li><li><a href="#" onclick="javascript:locationDong('Dong8',11560118)" id="Dong8"> 도림동</a></li><li><a href="#" onclick="javascript:locationDong('Dong9',11560119)" id="Dong9"> 문래동1가</a></li><li><a href="#" onclick="javascript:locationDong('Dong10',11560120)" id="Dong10"> 문래동2가</a></li><li><a href="#" onclick="javascript:locationDong('Dong11',11560121)" id="Dong11"> 문래동3가</a></li><li><a href="#" onclick="javascript:locationDong('Dong12',11560122)" id="Dong12"> 문래동4가</a></li><li><a href="#" onclick="javascript:locationDong('Dong13',11560123)" id="Dong13"> 문래동5가</a></li><li><a href="#" onclick="javascript:locationDong('Dong14',11560124)" id="Dong14"> 문래동6가</a></li><li><a href="#" onclick="javascript:locationDong('Dong15',11560132)" id="Dong15"> 신길동</a></li><li><a href="#" onclick="javascript:locationDong('Dong16',11560134)" id="Dong16"> 양평동</a></li><li><a href="#" onclick="javascript:locationDong('Dong17',11560125)" id="Dong17"> 양평동1가</a></li><li><a href="#" onclick="javascript:locationDong('Dong18',11560126)" id="Dong18"> 양평동2가</a></li><li><a href="#" onclick="javascript:locationDong('Dong19',11560127)" id="Dong19"> 양평동3가</a></li><li><a href="#" onclick="javascript:locationDong('Dong20',11560128)" id="Dong20"> 양평동4가</a></li><li><a href="#" onclick="javascript:locationDong('Dong21',11560129)" id="Dong21"> 양평동5가</a></li><li><a href="#" onclick="javascript:locationDong('Dong22',11560130)" id="Dong22"> 양평동6가</a></li><li><a href="#" onclick="javascript:locationDong('Dong23',11560131)" id="Dong23"> 양화동</a></li><li><a href="#" onclick="javascript:locationDong('Dong24',11560110)" id="Dong24" class="on"> 여의도동</a></li><li><a href="#" onclick="javascript:locationDong('Dong25',11560101)" id="Dong25"> 영등포동</a></li><li><a href="#" onclick="javascript:locationDong('Dong26',11560102)" id="Dong26"> 영등포동1가</a></li><li><a href="#" onclick="javascript:locationDong('Dong27',11560103)" id="Dong27"> 영등포동2가</a></li><li><a href="#" onclick="javascript:locationDong('Dong28',11560104)" id="Dong28"> 영등포동3가</a></li><li><a href="#" onclick="javascript:locationDong('Dong29',11560105)" id="Dong29"> 영등포동4가</a></li><li><a href="#" onclick="javascript:locationDong('Dong30',11560106)" id="Dong30"> 영등포동5가</a></li><li><a href="#" onclick="javascript:locationDong('Dong31',11560107)" id="Dong31"> 영등포동6가</a></li><li><a href="#" onclick="javascript:locationDong('Dong32',11560108)" id="Dong32"> 영등포동7가</a></li><li><a href="#" onclick="javascript:locationDong('Dong33',11560109)" id="Dong33"> 영등포동8가</a></li></ul></div></li></ul></div></div>
