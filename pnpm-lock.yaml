@@ -8,6 +8,9 @@ dependencies:
   fs:
     specifier: 0.0.1-security
     version: 0.0.1-security
+  json-2-csv:
+    specifier: ^5.0.1
+    version: 5.0.1
   puppeteer:
     specifier: ^21.6.1
     version: 21.6.1
@@ -232,6 +235,11 @@ packages:
       ms: 2.1.2
     dev: false
 
+  /deeks@3.0.2:
+    resolution: {integrity: sha512-c6OmjIygIB/avwXwEQOiODS+nw6fEX4cvOdDMqdL7dt3dicV/xykAJ9AeVc/8/JTVQDuacjRc9KCMmXafL1Y4A==}
+    engines: {node: '>= 16'}
+    dev: false
+
   /degenerator@5.0.1:
     resolution: {integrity: sha512-TllpMR/t0M5sqCXfj85i4XaAzxmS5tVA16dqvdkMwGmzI+dXLXnw3J+3Vdv7VKw+ThlTMboK6i9rnZ6Nntj5CQ==}
     engines: {node: '>= 14'}
@@ -243,6 +251,11 @@ packages:
 
   /devtools-protocol@0.0.1203626:
     resolution: {integrity: sha512-nEzHZteIUZfGCZtTiS1fRpC8UZmsfD1SiyPvaUNvS13dvKf666OAm8YTi0+Ca3n1nLEyu49Cy4+dPWpaHFJk9g==}
+    dev: false
+
+  /doc-path@4.0.2:
+    resolution: {integrity: sha512-OqZEk7EM1aP3JpO+mq0pv1msEJWrzZVXu4q3YjEYJKc+Wt3/chac4KJdaGueK5IGemOwfptrLctG9I8xkb59qQ==}
+    engines: {node: '>=16'}
     dev: false
 
   /emoji-regex@8.0.0:
@@ -427,6 +440,14 @@ packages:
     hasBin: true
     dependencies:
       argparse: 2.0.1
+    dev: false
+
+  /json-2-csv@5.0.1:
+    resolution: {integrity: sha512-rP9ChyMskS0angbvFdQ43SwEe72mEvqcY1/V2OeukQWxtlreUuZWhMlTdWjtd4L6kJxq+HPFTI06yqLvZiEVIA==}
+    engines: {node: '>= 16'}
+    dependencies:
+      deeks: 3.0.2
+      doc-path: 4.0.2
     dev: false
 
   /json-parse-even-better-errors@2.3.1:

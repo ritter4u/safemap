@@ -1,4 +1,7 @@
 const puppeteer = require('puppeteer-core');
+const converter = require('json-2-csv');
+const fs = require('fs');
+
 
 (async () => { 
   const browser = await puppeteer.launch({ // Puppeteer용 브라우저 실행
@@ -51,8 +54,54 @@ const puppeteer = require('puppeteer-core');
   
   //여기부터 logic
   let data=[];
-  for(let i=1;i<=Lastpage;i++){
-    //const ico = .ico
+  
+  const checkico = await page.waitForSelector('.ico')
+  let ico = await page.$$('.ico')
+
+  
+ 
+  // const backgroundImage = await page.evaluate(el => window.getComputedStyle(el).backgroundImage, await page.$('.ico'))
+
+  // await ico.map(el=>console.log(el.getProperties())) 
+//     const backgroundImage = await ico.map(el=>el.style.backgroundImage)
+// //    style.backgroundImage
+//  const backgroundImage = await page.evaluate(el => window.getComputedStyle(el).backgroundImage, await page.$('.ico'))
+// const backgroundImage = await ico.evaluate(el => el.style.backgroundImage, await page.$$('.ico'))
+//     style.backgroundImage
+  // console.log(backgroundImage)
+
+
+
+
+
+
+
+
+
+
+  // for(let i=1;i<=Lastpage;i++){
+    // const checkico = await page.waitForSelector('.ico')
+    // let ico = await page.$$('.ico')
+
+    // await JSON.stringify(ico.jsonValue)
+    // Extracting and logging the text content of each element
+    // for (const element of ico) {
+
+    // }
+// console.log(await page.$('.ico'))
+//     // await ico.map(el=>console.log(el.getProperties())) 
+// //     const backgroundImage = await ico.map(el=>el.style.backgroundImage)
+// // //    style.backgroundImage
+//    const backgroundImage = await page.evaluate(el => window.getComputedStyle(el).backgroundImage, await page.$('.ico'))
+// // const backgroundImage = await ico.evaluate(el => el.style.backgroundImage, await page.$$('.ico'))
+// //     style.backgroundImage
+//     console.log(backgroundImage)
+
+    //console.log(await ico.getProperty('style'))
+    //let ico_array= await (await ico.getProperty('style')).jsonValue()
+    //console.log(ico_array)
+    //consol.log(ico_array)
+    //let ico = .ico
     //비교 pin024.png
     //this -> parrent > tit, parrent > address
     //{"ico":"","title":"","address",""}
@@ -66,13 +115,15 @@ const puppeteer = require('puppeteer-core');
 //    </li>
 
 
-    const btnpagenext = await page.waitForSelector('.btn-page-next')
-    await btnpagenext.click()
-    i++;
-  }
+  //   const btnpagenext = await page.waitForSelector('.btn-page-next')
+  //   await btnpagenext.click()
+  //   i++;
+  // }
+
+
   //파일에 추가저장
-  const fs = require('fs');
-  fs.writeFileSync('file.json', JSON.stringify(data));
+  const csv = await converter.json2csv(data);
+  fs.writeFileSync('file.json', csv);
 
 {/* <div class="row tagTab-cont" id="tagTab-cont05" style="display: block;">
     <p class="majorCont-subTit">재난배상책임보험</p>
