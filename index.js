@@ -1,14 +1,15 @@
-const puppeteer = require('puppeteer-core');
+const puppeteer = require('puppeteer');
 const converter = require('json-2-csv');
 const fs = require('fs');
 
 
 (async () => {
     const browser = await puppeteer.launch({ // Puppeteer용 브라우저 실행
-        executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe'
-        , defaultViewport: {
+//        executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe'
+//        ,
+        defaultViewport: {
             width: 1280,
-            height: 960
+            height: 1024
         }
         , headless: false
     });
@@ -50,6 +51,16 @@ const fs = require('fs');
 
     //데이터 준비 끝
 
+    //검색으로
+    const searchOption = await page.waitForSelector('#srchType')
+    await page.select('select#srchType', 'srch_place')
+
+    //arg로 구를 받던지 여튼 가변으로
+    const searchield = await page.waitForSelector('#srchWeb')
+    await searchield.type('강남구')
+    const searchbutton = await page.waitForSelector('#btn_srch')
+    await searchbutton.click()
+
     //재난으로 - 자주 부르는 것같은데 모듈화?
 
     const hazard = await page.waitForSelector('li[title="재난"] > a')
@@ -66,32 +77,19 @@ const fs = require('fs');
     const closeButton3 = await page.waitForSelector('.btn_close')
     await closeButton3.click()
 
+    //페이지 데이터 가져오기
+    const btnpagelast = await page.waitForSelector('.btn-page-last')
+    await btnpagelast.click()
 
-    //검색으로
-    const searchOption = await page.waitForSelector('#srchType')
-    await page.select('select#srchType', 'srch_place')
+    const checkcurrent = await page.waitForSelector('.current')
+    const element = await page.$('.current')
+    const Lastpage = await (await element.getProperty('textContent')).jsonValue()
 
-    //arg로 구를 받던지 여튼 가변으로
-    const searchield = await page.waitForSelector('#srchWeb')
-    await searchield.type('강남구')
-    const searchbutton = await page.waitForSelector('#btn_srch')
-    await searchbutton.click()
+    const btnpagefirst = await page.waitForSelector('.btn-page-first')
+    await btnpagefirst.click()
 
-    if ()
-
-        // //페이지 데이터 가져오기
-        // const btnpagelast = await page.waitForSelector('.btn-page-last')
-        // await btnpagelast.click()
-
-        // const checkcurrent = await page.waitForSelector('.current')
-        // let element = await page.$('.current')
-        // let Lastpage = await (await element.getProperty('textContent')).jsonValue()
-
-        // const btnpagefirst = await page.waitForSelector('.btn-page-first')
-        // await btnpagefirst.click()
-
-//   //여기부터 logic
-        let data = [];
+    //여기부터 logic
+    let data = [];
 
 //   const checkico = await page.waitForSelector('.ico')
 //   let ico = await page.$$('.ico')

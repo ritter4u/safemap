@@ -4,5 +4,8 @@
 		"json-2-csv": "^5.0.1",
 		"puppeteer": "^21.6.1",
 		"puppeteer-core": "^21.6.1"
+	},
+	"devDependencies": {
+		"prettier": "3.1.1"
 	}
 }
