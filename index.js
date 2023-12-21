@@ -46,6 +46,21 @@ const fs = require("fs");
 
   //시도 가져오기
   //#locationCity > li
+  //  let location_map = [];
+  //  let location = await page.evaluate(() => {
+  //    let temp = [];
+  //    document.querySelectorAll("#locationCity > li").forEach((el) => {
+  //      temp.push({
+  //        sido: el.,
+  //        id: el,
+  //      });
+  //    });
+  //    return temp;
+  //  });
+  //  console.log(location);
+
+  //
+  //    })
 
   //각시도마다 시군구 가져오기
   //#locationBorough > li
@@ -62,6 +77,27 @@ const fs = require("fs");
   await searchield.type("강남구");
   const searchbutton = await page.waitForSelector("#btn_srch");
   await searchbutton.click();
+
+  //줌레벨
+  //    <div class="web_zoom_box btn-group-vertical-full">
+  //        <button type="button" class="btn btn-default btn-tooltip tooltip-left zoom_plus"
+  //                onclick="mapZoomControlPlusRe()">
+  //            <i></i>
+  //            <span class="txt">확대</span>
+  //        </button>
+  //  <button type="button" class="btn btn-default btn-tooltip tooltip-left zoom_minus" onclick="mapZoomControlMinusRe()">
+  //  <i></i>
+  //  <span class="txt">축소</span>
+  //  </button>
+  const zoom_minus = await page.waitForSelector(".zoom_minus");
+  await zoom_minus.click();
+  await zoom_minus.click();
+  await zoom_minus.click();
+  await zoom_minus.click();
+  await zoom_minus.click();
+  await zoom_minus.click();
+  await zoom_minus.click();
+  await zoom_minus.click();
 
   //재난으로 - 자주 부르는 것같은데 모듈화?
 
@@ -133,16 +169,16 @@ const fs = require("fs");
 
   {
     /* <div class="row tagTab-cont" id="tagTab-cont05" style="display: block;">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <p class="majorCont-subTit">재난배상책임보험</p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <button type="button" class="tagTab-cont-close">닫기</button>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <ul class="list-type1 col-2 form-check web-menu">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <li><input type="checkbox" name="chk2" id="Insur_fake" onclick="clickCheckBox('Insur', this, 'tagTab-cont05');" value="재난배상책임보험"><label for="Insur_fake" tabindex="0" onkeydown="keydownLabel(this)">재난배상책임보험</label> </li>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <li><input type="checkbox" id="Insur_link" name="chk2" onclick="insurNewTab(this)"><label for="Insur_link" tabindex="0" onkeydown="keydownLabel(this)">시설물조회</label> </li>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </div> */
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <p class="majorCont-subTit">재난배상책임보험</p>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <button type="button" class="tagTab-cont-close">닫기</button>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <ul class="list-type1 col-2 form-check web-menu">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <li><input type="checkbox" name="chk2" id="Insur_fake" onclick="clickCheckBox('Insur', this, 'tagTab-cont05');" value="재난배상책임보험"><label for="Insur_fake" tabindex="0" onkeydown="keydownLabel(this)">재난배상책임보험</label> </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <li><input type="checkbox" id="Insur_link" name="chk2" onclick="insurNewTab(this)"><label for="Insur_link" tabindex="0" onkeydown="keydownLabel(this)">시설물조회</label> </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div> */
   }
 
-  //   const [button] = await page.$x("//button[contains(., 'Button text')]");
+  // const [button] = await page.$x("//button[contains(., 'Button text')]");
   // if (button) {
   //     await button.click();
   // }
