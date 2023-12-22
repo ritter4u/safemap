@@ -131,6 +131,7 @@ const fs = require("fs");
 
   //여기부터 logic
   let data = [];
+  let j = 1;
 
   console.log(Lastpage);
   for (let i = 1; i <= Lastpage; i++) {
@@ -162,13 +163,16 @@ const fs = require("fs");
     backgroundImage = null;
     await page.waitForTimeout(3000);
     //out 한페이지의 리스트중 bg다른 것만모음
+    if (i % 1000 === 0) {
+      const csv = await converter.json2csv(data);
+      fs.writeFileSync("output/file" + j + ".csv", csv);
+      data = [];
+      j++;
+    }
   }
-
   await console.log(data);
 
   //파일에 추가저장
-  const csv = await converter.json2csv(data);
-  fs.writeFileSync("output/file.csv", csv);
 
   {
     /* <div class="row tagTab-cont" id="tagTab-cont05" style="display: block;">
@@ -195,5 +199,5 @@ const fs = require("fs");
 
   // await page.keyboard.press('Enter')
 
-  // await browser.close(); // 브라우저 종료
+  await browser.close(); // 브라우저 종료
 })();
